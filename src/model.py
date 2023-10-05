@@ -11,7 +11,7 @@ def sampling_classifier_model(X_train_transformed, y_train):
     
     cv = StratifiedKFold(n_splits=5)
     
-    eec_model_cv = cross_validate(eec, X_train_transformed, y_train, cv=cv, n_jobs=-1, scoring='recall')
+    eec_model_cv = cross_validate(eec, X_train_transformed, y_train, cv=cv, scoring='recall')
     print(f"{eec_model_cv['test_score'].mean():.3f}")
     eec_model = EasyEnsembleClassifier(random_state=42).fit(X_train_transformed, y_train)
     
