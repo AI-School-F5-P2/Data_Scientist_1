@@ -163,3 +163,4 @@ cython_debug/
 .gitignore
 __pycache__
 .env
+*.pkl
