@@ -1,4 +1,6 @@
+import pandas as pd
 from utils import load_data, X_y_separation, split_stratify_y, create_test_set
+from preprocessing import create_preprocessor
 from dotenv import load_dotenv
 import os
 
@@ -16,4 +18,7 @@ if __name__ == '__main__':
     X_train, X_test, y_train, y_test = split_stratify_y(X, y, test_size=0.2)
 
     create_test_set(X_test, y_test)
-    
+
+    preprocessor = create_preprocessor()
+
+    X_train_transformed = preprocessor.fit_transform(X_train)
