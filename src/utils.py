@@ -1,5 +1,7 @@
 import pandas as pd
 
+import os
+
 from sklearn.model_selection import train_test_split
 
 from collections import Counter
@@ -29,7 +31,7 @@ def X_y_separation(df, string_y):
     target/label column (as a string). It returns the X matrix 
     and the y vector as two different variables.
     '''
-    X = df.drop(string_y, axis = 1)
+    X = df.drop(string_y, axis=1)
     y = df[string_y].copy()
     return X, y
 
@@ -42,6 +44,7 @@ def split_stratify_y(X, y, test_size):
     the stratification was correctly done.
     '''
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=42)
+    
     count_y = Counter(y)
     count_y_train = Counter(y_train)
     count_y_test = Counter(y_test)
@@ -53,4 +56,15 @@ def split_stratify_y(X, y, test_size):
         print(f'for {i} the percentage of positive instances is: {percentage_of_1}')
     
     return X_train, X_test, y_train, y_test
+
+def create_test_set(X_test, y_test):
+    '''
+    This function creates the test dataset to be used at the end
+    for model validation. It concatenates the X_test and y_test
+    obtained before after stratification and splitting.
+    '''
+    data_test = pd.concat([X_test, y_test], axis=1)
+    path_to_save = os.getenv('PATH_TO_SAVE_CSV')
+    data_test.to_csv(path_to_save)
+    print('File saved correctly')
 
