@@ -51,6 +51,9 @@ Estructura de carpetas:
 ## Conclusiones
 Este proyecto tiene como objetivo desarrollar un prototipo de programa de inteligencia artificial para predecir el riesgo de ictus en pacientes. El cumplimiento de las condiciones de entrega, el uso de tecnologías adecuadas y un informe de clasificación detallado serán fundamentales para su éxito. 
 
+## Documentación
+https://www.notion.so/Prototipo-de-detecci-n-de-riesgo-de-ictus-con-Inteligencia-Artificial-a5043491c86e4c71b26581da97bf21a3?pvs=4
+
 
 
 
