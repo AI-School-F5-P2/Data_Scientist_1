@@ -1,4 +1,6 @@
-![image](https://github.com/AI-School-F5-P2/Data_Scientist_1/assets/52253074/ed548b41-5e87-481f-9b31-13d7dac5a20d) 
+![image](https://github.com/AI-School-F5-P2/Data_Scientist_1/assets/52253074/74ef526b-53c4-419f-b5fa-1c5fddd24605)
+
+
 # PROYECTO DATA SCIENTIST: Aprendizaje Supervisado. 
 ## Prototipo de detección de riesgo de ictus con Inteligencia Artificial.
 ## Equipo 1
