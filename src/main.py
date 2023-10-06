@@ -31,6 +31,6 @@ if __name__ == '__main__':
 
     X_test_transformed, y_test_true = transform_test_data()
 
-    y_test_predicted = predict_test_data(X_test_transformed)
+    y_test_predicted, y_probs = predict_test_data(X_test_transformed)
 
-    # test_evaluation(y_test_true, y_test_predicted)
+    test_evaluation(y_test_true, y_test_predicted, y_probs)
