@@ -57,6 +57,7 @@ def split_stratify_y(X, y, test_size):
     
     return X_train, X_test, y_train, y_test
 
+
 def create_test_set(X_test, y_test):
     '''
     This function creates the test dataset to be used at the end

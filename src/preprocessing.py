@@ -67,6 +67,7 @@ def impute_smokers_age(X_train):
     
     return X_train
 
+
 def create_preprocessor():
     '''
     This function creates the preprocessor to transform the X matrix.

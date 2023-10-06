@@ -2,6 +2,7 @@ import pandas as pd
 from utils import load_data, X_y_separation, split_stratify_y, create_test_set
 from preprocessing import create_preprocessor
 from model import sampling_classifier_model, pickle_files
+from testing import transform_test_data, predict_test_data, test_evaluation
 from dotenv import load_dotenv
 import os
 
@@ -27,3 +28,9 @@ if __name__ == '__main__':
     model = sampling_classifier_model(X_train_transformed, y_train)
 
     pickle_files(preprocessor, model)
+
+    X_test_transformed, y_test_true = transform_test_data()
+
+    y_test_predicted = predict_test_data(X_test_transformed)
+
+    # test_evaluation(y_test_true, y_test_predicted)
