@@ -1,5 +1,6 @@
 from imblearn.ensemble import EasyEnsembleClassifier
 from sklearn.model_selection import cross_validate, StratifiedKFold
+from sklearn.pipeline import Pipeline
 import pickle
 import os
 
@@ -32,3 +33,9 @@ def pickle_files(preprocessor, model):
     with open(path_to_model, 'wb') as archivo:
         pickle.dump(model, archivo)
         print('Model file successfully created')
+    
+    full_pipeline = Pipeline([('preprocessor', preprocessor), ('model', model)])
+    path_to_full_pipeline = os.getenv('PATH_TO_FULL_PIPELINE')
+    with open(path_to_full_pipeline, 'wb') as archivo:
+        pickle.dump(full_pipeline, archivo)
+        print('Full pipeline file successfully created')
