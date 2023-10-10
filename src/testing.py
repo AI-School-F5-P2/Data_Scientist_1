@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
 from sklearn.metrics import roc_curve, roc_auc_score, auc, f1_score
 from utils import X_y_separation
-import os
+from decouple import config
 import pickle
 
 def transform_test_data():
@@ -11,21 +11,27 @@ def transform_test_data():
     This function reads the test.csv file, transforms the X variables
     using the preprocessor pickle file. It returns X_test_transformed.
     '''
-    path_to_open = os.getenv('PATH_TO_SAVE_CSV')
-    df_test = pd.read_csv(path_to_open)
-
-    #drop the column Unnamed: 0 that was created automatically
-    #when saving the file the first time.
-    df_test = df_test.drop(columns=['Unnamed: 0'])
-    X_test, y_test = X_y_separation(df_test, 'stroke')
-
-    path_to_preprocessor = os.getenv('PATH_TO_PREPROCESSOR')
-    with open (path_to_preprocessor, 'rb') as archivo:
-        preprocessor = pickle.load(archivo)
+    path_to_open = config('PATH_TO_SAVE_CSV')
     
-    X_test_transformed = preprocessor.transform(X_test)
+    if path_to_open is not None:
+      df_test = pd.read_csv(path_to_open)
+      #drop the column Unnamed: 0 that was created automatically
+      #when saving the file the first time.
+      df_test = df_test.drop(columns=['Unnamed: 0'])
+      X_test, y_test = X_y_separation(df_test, 'stroke')
 
-    return X_test_transformed, y_test
+      path_to_preprocessor = config('PATH_TO_PREPROCESSOR')
+
+      with open (path_to_preprocessor, 'rb') as archivo:
+         preprocessor = pickle.load(archivo)
+    
+      X_test_transformed = preprocessor.transform(X_test)
+
+      return X_test_transformed, y_test
+
+    else:
+        print("File path is None. Check the file path.")
+        return None   #If path_to_open is None 
 
 
 def predict_test_data(X_test_transformed):
@@ -33,7 +39,7 @@ def predict_test_data(X_test_transformed):
     This function takes as argument the X_test_transformed and returns
     the y_test_predicted by the model using the pickle file.
     '''
-    path_to_model = os.getenv('PATH_TO_MODEL')
+    path_to_model = config('PATH_TO_MODEL')
     with open(path_to_model, 'rb') as archivo:
         model = pickle.load(archivo)
     
@@ -83,8 +89,3 @@ def plot_roc_curve(y_true, y_probs):
     plt.title('ROC Curve')
     plt.legend(loc = 'lower right')
     plt.show()
-
-
-
-
-    

@@ -1,9 +1,6 @@
 import pandas as pd
-
-import os
-
+from decouple import config
 from sklearn.model_selection import train_test_split
-
 from collections import Counter
 
 def load_data(path_to_data):
@@ -17,7 +14,7 @@ def load_data(path_to_data):
         return df
     
     except FileNotFoundError:
-        print(f"El archivo no se encontró.")
+        print(f"File is not found.")
         return None
     
     except Exception as e:
@@ -65,7 +62,7 @@ def create_test_set(X_test, y_test):
     obtained before after stratification and splitting.
     '''
     data_test = pd.concat([X_test, y_test], axis=1)
-    path_to_save = os.getenv('PATH_TO_SAVE_CSV')
+    path_to_save = config('PATH_TO_SAVE_CSV')
     data_test.to_csv(path_to_save)
     print('File saved correctly')
 

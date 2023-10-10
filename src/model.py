@@ -1,7 +1,7 @@
 from imblearn.ensemble import EasyEnsembleClassifier
 from sklearn.model_selection import cross_validate, StratifiedKFold
 import pickle
-import os
+from decouple import config
 
 def sampling_classifier_model(X_train_transformed, y_train):
     '''
@@ -23,12 +23,12 @@ def pickle_files(preprocessor, model):
     This function creates the pickle files: one for the preprocessor
     and another one for the final model.
     '''
-    path_to_preprocessor = os.getenv('PATH_TO_PREPROCESSOR')
+    path_to_preprocessor = config('PATH_TO_PREPROCESSOR')
     with open(path_to_preprocessor, 'wb') as archivo:
         pickle.dump(preprocessor, archivo)
         print('Preprocessor file successfully created')
 
-    path_to_model = os.getenv('PATH_TO_MODEL')
+    path_to_model = config('PATH_TO_MODEL')
     with open(path_to_model, 'wb') as archivo:
         pickle.dump(model, archivo)
         print('Model file successfully created')

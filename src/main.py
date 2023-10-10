@@ -3,15 +3,11 @@ from utils import load_data, X_y_separation, split_stratify_y, create_test_set
 from preprocessing import create_preprocessor
 from model import sampling_classifier_model, pickle_files
 from testing import transform_test_data, predict_test_data, test_evaluation
-from dotenv import load_dotenv
-import os
+from decouple import config
 
 if __name__ == '__main__':
     
-    #loading of .env variables
-    load_dotenv()
-    
-    path_to_data = os.getenv('PATH_TO_DATA_CSV')
+    path_to_data = config('PATH_TO_DATA_CSV')
     
     df = load_data(path_to_data)
 
