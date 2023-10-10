@@ -9,8 +9,6 @@ from utils import X_y_separation
 import os
 import pickle
 
-from probability import false_positives_false_negatives
-
 
 def transform_predict_test_data():
     '''
@@ -58,10 +56,6 @@ def test_evaluation(y_test_true, y_test_predicted, y_probs):
     print(f"Precision: {precision:.3f}")
     print(f"Recall: {recall:.3f}")
     print(f"F1-Score: {f1:.3f}")
-
-    false_positives_false_negatives(y_test_true, y_test_predicted, y_probs)
-
-
     print(f"ROC Curve (AUC):")
     plot_roc_curve(y_test_true, y_probs)
 
@@ -82,4 +76,4 @@ def plot_roc_curve(y_true, y_probs):
     plt.ylabel('True Positive Rate')
     plt.title('ROC Curve')
     plt.legend(loc = 'lower right')
-    plt.show()   
+    plt.show()

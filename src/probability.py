@@ -4,7 +4,10 @@ from sklearn.metrics import confusion_matrix
 
 def false_positives_false_negatives(y_true, y_predicted, y_probs):
     '''
-    y_probs contains the probabilities of the postive class (1)
+    This function takes y true, y predicted by the model and y_probs 
+    which contains the probabilities of the postive class (1). It calculates
+    the probabilities of the false positives and false negatives to determine
+    the range where the model does not predict with certainty.
     '''
     conf_matrix = confusion_matrix(y_true, y_predicted)
     print('')
@@ -32,6 +35,4 @@ def false_positives_false_negatives(y_true, y_predicted, y_probs):
 
     print('')
     print(f'Min Probability: {min_prob:.3f}')
-    print(f'Max Probability: {max_prob:.3f}') 
-
-    return probs_fp, probs_fn
+    print(f'Max Probability: {max_prob:.3f}')
