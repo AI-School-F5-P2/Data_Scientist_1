@@ -164,3 +164,6 @@ cython_debug/
 __pycache__
 .env
 *.pkl
+
+.DS_Store
+.idea/
