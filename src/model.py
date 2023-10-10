@@ -1,3 +1,4 @@
+import numpy as np
 from imblearn.ensemble import EasyEnsembleClassifier
 from sklearn.model_selection import cross_validate, StratifiedKFold
 from sklearn.pipeline import Pipeline
@@ -12,9 +13,19 @@ def sampling_classifier_model(X_train_transformed, y_train):
     eec = EasyEnsembleClassifier(random_state=42)
     
     cv = StratifiedKFold(n_splits=5)
+
+    scoring = ['accuracy', 'precision', 'recall', 'f1']
     
-    eec_model_cv = cross_validate(eec, X_train_transformed, y_train, cv=cv, scoring='recall')
-    print(f"{eec_model_cv['test_score'].mean():.3f}")
+    eec_model_cv = cross_validate(eec, X_train_transformed, y_train, cv=cv, scoring=scoring)
+
+    print('')
+    print('Cross Validation Metrics:')
+    print(f"Accuracy: {(np.mean(eec_model_cv['test_accuracy'])):.3f}")
+    print(f"Precision: {(np.mean(eec_model_cv['test_precision'])):.3f}")
+    print(f"Recall: {(np.mean(eec_model_cv['test_recall'])):.3f}")
+    print(f"F1-Score: {(np.mean(eec_model_cv['test_f1'])):.3f}")
+    print('')
+ 
     eec_model = EasyEnsembleClassifier(random_state=42).fit(X_train_transformed, y_train)
     
     return eec_model

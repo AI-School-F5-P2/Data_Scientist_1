@@ -68,4 +68,6 @@ def create_test_set(X_test, y_test):
     data_test = pd.concat([X_test, y_test], axis=1)
     path_to_save = os.getenv('PATH_TO_SAVE_CSV')
     data_test.to_csv(path_to_save)
+    
+    print('')
     print('File test.csv saved correctly')
