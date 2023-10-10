@@ -1,6 +1,5 @@
-import pandas as pd
 from utils import load_data, X_y_separation, split_stratify_y, create_test_set
-from preprocessing import create_preprocessor
+from preprocessing import create_fit_preprocessor
 from model import sampling_classifier_model, pickle_files
 from testing import transform_predict_test_data
 from dotenv import load_dotenv
@@ -20,7 +19,7 @@ if __name__ == '__main__':
 
     create_test_set(X_test, y_test)
 
-    preprocessor, X_train_transformed = create_preprocessor(X_train)
+    preprocessor, X_train_transformed = create_fit_preprocessor(X_train)
 
     model = sampling_classifier_model(X_train_transformed, y_train)
 

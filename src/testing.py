@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
-from sklearn.metrics import roc_curve, roc_auc_score, auc, f1_score
+from sklearn.metrics import roc_curve, auc, f1_score
 from utils import X_y_separation
 import os
 import pickle
