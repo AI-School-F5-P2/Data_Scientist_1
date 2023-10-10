@@ -1,10 +1,15 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+
 from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
-from sklearn.metrics import roc_curve, auc, f1_score
+from sklearn.metrics import roc_curve, auc, f1_score, roc_auc_score
 from utils import X_y_separation
+
 import os
 import pickle
+
+from probability import false_positives_false_negatives
 
 
 def transform_predict_test_data():
@@ -28,6 +33,8 @@ def transform_predict_test_data():
     y_test_predicted = full_pipeline.predict(X_test)
 
     probability = full_pipeline.predict_proba(X_test)
+
+    #probabilities for positive class (1)
     y_probs = probability[:, full_pipeline.classes_.tolist().index(1)]
 
     test_evaluation(y_test, y_test_predicted, y_probs)
@@ -51,6 +58,10 @@ def test_evaluation(y_test_true, y_test_predicted, y_probs):
     print(f"Precision: {precision:.3f}")
     print(f"Recall: {recall:.3f}")
     print(f"F1-Score: {f1:.3f}")
+
+    false_positives_false_negatives(y_test_true, y_test_predicted, y_probs)
+
+
     print(f"ROC Curve (AUC):")
     plot_roc_curve(y_test_true, y_probs)
 
