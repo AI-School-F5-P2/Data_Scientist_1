@@ -16,13 +16,14 @@ def transform_predict_test_data():
     the response (y_test_predicted). It calls the evaluation 
     function to obtain performance metrics.
     '''
-    path_to_open = os.getenv('PATH_TO_SAVE_CSV')
-    df_test = pd.read_csv(path_to_open)
-
-    #drop the column Unnamed: 0 that was created automatically
-    #when saving the file the first time.
-    df_test = df_test.drop(columns=['Unnamed: 0'])
-    X_test, y_test = X_y_separation(df_test, 'stroke')
+    path_to_open = config('PATH_TO_SAVE_CSV')
+    
+    if path_to_open is not None:
+      df_test = pd.read_csv(path_to_open)
+      #drop the column Unnamed: 0 that was created automatically
+      #when saving the file the first time.
+      df_test = df_test.drop(columns=['Unnamed: 0'])
+      X_test, y_test = X_y_separation(df_test, 'stroke')
 
     path_to_full_pipeline = os.getenv('PATH_TO_FULL_PIPELINE')
     with open (path_to_full_pipeline, 'rb') as file:
