@@ -1,4 +1,4 @@
-![image](https://github.com/AI-School-F5-P2/Data_Scientist_1/assets/52253074/74ef526b-53c4-419f-b5fa-1c5fddd24605)
+![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)
 
 
 # PROYECTO DATA SCIENTIST: Aprendizaje Supervisado. 
