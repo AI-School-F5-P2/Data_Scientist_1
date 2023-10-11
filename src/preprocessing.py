@@ -72,7 +72,7 @@ def impute_smokers_age(X_train):
 def create_fit_preprocessor(X_train):
     '''
     This function creates the preprocessor to transform the X matrix.
-    It returns the object preprocessor.
+    It returns the object preprocessor and the transformed X matrix.
     '''
     func_trans = FunctionTransformer(impute_smokers_age)
 
