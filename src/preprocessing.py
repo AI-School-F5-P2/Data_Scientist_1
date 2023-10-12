@@ -6,6 +6,7 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler, OrdinalEncoder
 from sklearn.impute import KNNImputer
 
+
 class CategoricalBmi(BaseEstimator, TransformerMixin):
     '''
     This class is a Custom Transformer that creates a new column
@@ -68,7 +69,7 @@ def impute_smokers_age(X_train):
     return X_train
 
 
-def create_preprocessor():
+def create_fit_preprocessor(X_train):
     '''
     This function creates the preprocessor to transform the X matrix.
     It returns the object preprocessor.
@@ -86,4 +87,6 @@ def create_preprocessor():
     preprocessor = Pipeline([('nulls', func_trans), ('scale_code', col_transformer), 
                              ('knn', KNNImputer()), ('bmi_to_cat', CategoricalBmi())])
     
-    return preprocessor
+    X_train_transformed = preprocessor.fit_transform(X_train)
+
+    return preprocessor, X_train_transformed

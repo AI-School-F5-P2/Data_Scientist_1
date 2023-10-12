@@ -1,5 +1,6 @@
 from imblearn.ensemble import EasyEnsembleClassifier
 from sklearn.model_selection import cross_validate, StratifiedKFold
+from sklearn.pipeline import Pipeline
 import pickle
 from decouple import config
 
@@ -20,15 +21,13 @@ def sampling_classifier_model(X_train_transformed, y_train):
 
 def pickle_files(preprocessor, model):
     '''
-    This function creates the pickle files: one for the preprocessor
-    and another one for the final model.
-    '''
-    path_to_preprocessor = config('PATH_TO_PREPROCESSOR')
-    with open(path_to_preprocessor, 'wb') as archivo:
-        pickle.dump(preprocessor, archivo)
-        print('Preprocessor file successfully created')
-
-    path_to_model = config('PATH_TO_MODEL')
-    with open(path_to_model, 'wb') as archivo:
-        pickle.dump(model, archivo)
-        print('Model file successfully created')
+    This function creates the full_pipeline pickle file. It takes 
+    the preprocessor and the model previously trained and creates 
+    the full pipeline (preprocessing + estimator).
+    '''   
+    full_pipeline = Pipeline([('preprocessor', preprocessor), ('model', model)])
+    
+    path_to_full_pipeline = config('PATH_TO_FULL_PIPELINE')
+    with open(path_to_full_pipeline, 'wb') as file:
+        pickle.dump(full_pipeline, file)
+        print('Full pipeline file successfully created')

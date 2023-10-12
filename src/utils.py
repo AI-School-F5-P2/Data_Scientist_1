@@ -14,7 +14,7 @@ def load_data(path_to_data):
         return df
     
     except FileNotFoundError:
-        print(f"File is not found.")
+        print(f"El archivo no se encontró.")
         return None
     
     except Exception as e:
@@ -64,5 +64,4 @@ def create_test_set(X_test, y_test):
     data_test = pd.concat([X_test, y_test], axis=1)
     path_to_save = config('PATH_TO_SAVE_CSV')
     data_test.to_csv(path_to_save)
-    print('File saved correctly')
-
+    print('File test.csv saved correctly')
