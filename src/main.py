@@ -52,5 +52,4 @@ if __name__ == '__main__':
     pickle_files(preprocessor, model)
 
     metrics_final_training(X, y)
-
-    app.run()
+    
