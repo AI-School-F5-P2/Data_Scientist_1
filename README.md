@@ -53,10 +53,10 @@ Estructura de carpetas:
 
 ## Dockerfile
 
-1.Descargar Docker Desktop.
-2.Abrir una cuenta en Docker Hub. 
-3.Descargar la imagen con el siguiente comando: docker pull verobermejo80/proyecto_docker:latest 
-4.Correr el archivo con el siguiente comando: docker run -p 8502:8501 verobermejo80/proyecto_docker:latest
+- Descargar Docker Desktop.
+- Abrir una cuenta en Docker Hub. 
+- Descargar la imagen con el siguiente comando: docker pull verobermejo80/proyecto_docker:latest 
+- Correr el archivo con el siguiente comando: docker run -p 8502:8501 verobermejo80/proyecto_docker:latest
 
 
 ## Conclusiones
