@@ -49,7 +49,7 @@ Streamlit: es una biblioteca de código abierto de Python que se utiliza para cr
 ## Organización del Proyecto
 Estructura de carpetas:
 
-![Image alt](https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/Data_Science_1.pdf)
+![Pdf alt]([https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/Data_Science_1.pdf)](https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/Data_Science_1.pdf)
 
 
 ## Conclusiones
