@@ -17,42 +17,50 @@ En este contexto proponemos una aplicación de inteligencia artificial que eval�
 
 Para ello el hospital F5 ha recopilado datos relacionados con indicadores de salud y la ocurrencia de ictus en pacientes, para entrenar un modelo de IA capaz de predecir si hay riesgo de ictus.
 
-
-
-
 ## Plazos
 El proyecto se completó en un plazo de 3 semanas.
 
 ## Condiciones de entrega
 Para la reunión de entrega, se proporcionó lo siguiente:
 
-Un repositorio en GitHub que contenga el trabajo organizado adecuadamente en ramas, con mensajes de commit claros y limpios.
+- Un repositorio en GitHub con el trabajo organizado adecuadamente en ramas, con mensajes de commit claros y limpios.
 
-Un informe de clasificación que explique la capacidad del modelo de inteligencia artificial para predecir el riesgo de ictus.
+- Un informe de clasificación explicando la capacidad del modelo de inteligencia artificial para predecir el riesgo de ictus.
 
-Un modelo con overfitting menor al 5%.
+- Un modelo con overfitting menor al 5%.
 
-Debes usar herramientas de gestión de proyectos como Trello u otras para llevar un seguimiento y organización adecuada del proyecto.
+- Herramientas de gestión de proyectos como Trello u otras para llevar un seguimiento y organización adecuada del proyecto.
 
 ## Tecnologías utilizadas:
 Para llevar a cabo este proyecto, se utilizaron las siguientes tecnologías:
 
-Scikit-learn: Una librería de aprendizaje automático en Python que ofrece una amplia gama de algoritmos de clasificación y herramientas de preprocesamiento de datos.
+- Scikit-learn: Una librería de aprendizaje automático en Python que ofrece una amplia gama de algoritmos de clasificación y herramientas de preprocesamiento de datos.
 
-Pandas: Una librería de Python para la manipulación y análisis de datos que será útil para la limpieza y exploración de los datos.
+- Pandas: Una librería de Python para la manipulación y análisis de datos que será útil para la limpieza y exploración de los datos.
 
-Git: Un sistema de control de versiones que facilitará la colaboración y el seguimiento de cambios en el código.
+- Git: Un sistema de control de versiones que facilitará la colaboración y el seguimiento de cambios en el código.
 
-GitHub: Una plataforma de alojamiento de repositorios que permite el trabajo colaborativo y la gestión de proyectos.
+- GitHub: Una plataforma de alojamiento de repositorios que permite el trabajo colaborativo y la gestión de proyectos.
 
-Streamlit: es una biblioteca de código abierto de Python que se utiliza para crear aplicaciones web interactivas de manera rápida y sencilla. 
+- Streamlit: es una biblioteca de código abierto de Python que se utiliza para crear aplicaciones web interactivas de manera rápida y sencilla.
+
+- Docker
+
 ## Organización del Proyecto
 Estructura de carpetas:
 
 ![Pdf alt](https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/images/data_science_1.jpeg)
 
+## Dockerfile
+
+1.Descargar Docker Desktop.
+2.Abrir una cuenta en Docker Hub. 
+3.Descargar la imagen con el siguiente comando: docker pull verobermejo80/proyecto_docker:latest 
+4.Correr el archivo con el siguiente comando: docker run -p 8502:8501 verobermejo80/proyecto_docker:latest
+
+
 ## Conclusiones
-Este proyecto tiene como objetivo desarrollar un prototipo de programa de inteligencia artificial para predecir el riesgo de ictus en pacientes. El cumplimiento de las condiciones de entrega, el uso de tecnologías adecuadas y un informe de clasificación detallado serán fundamentales para su éxito. 
+Este proyecto presenta un prototipo de programa de inteligencia artificial para predecir el riesgo de ictus en pacientes. El cumplimiento de las condiciones de entrega, el uso de las tecnologías adecuadas mencionadas anteriormente y un informe de clasificación detallado han sido fundamentales para su éxito. 
 
 ## Documentación
 https://www.notion.so/Prototipo-de-detecci-n-de-riesgo-de-ictus-con-Inteligencia-Artificial-a5043491c86e4c71b26581da97bf21a3?pvs=4
