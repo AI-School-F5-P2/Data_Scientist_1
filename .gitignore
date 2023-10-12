@@ -162,3 +162,13 @@ cython_debug/
 *.csv
 *.pkl 
 .gitignore
+
+*.csv
+.gitignore
+__pycache__
+.env
+*.pkl
+
+.DS_Store
+.idea/
+feature_importance.py
