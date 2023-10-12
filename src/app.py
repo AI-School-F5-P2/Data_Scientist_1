@@ -7,6 +7,7 @@ import os
 
 # To run the app use the following code: streamlit run app.py
 # Access environment variables directly:
+load_dotenv()
 PATH_TO_FULL_PIPELINE = os.getenv("PATH_TO_FULL_PIPELINE")
 
 # Load the full pipeline pkl file:
@@ -35,7 +36,8 @@ st.set_page_config(
 )
 
 # App title and image:
-st.image(Image.open('C:/Users/FACTORIA F5/Data Scientist/Data_Scientist_1/images/Banner.jpg'), width=1380)
+path_to_banner = os.getenv('PATH_TO_BANNER')
+st.image(Image.open(path_to_banner), width=1380)
 
 # Load the full pipeline:
 full_pipeline = load_full_pipeline()
