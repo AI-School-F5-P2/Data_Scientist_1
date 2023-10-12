@@ -5,7 +5,9 @@ from PIL import Image
 from dotenv import load_dotenv
 import os
 
-# To run the app use the following code: streamlit run app.py
+# To run the app use the following code: streamlit run app.py. 
+# Make sure that you are located inside the src folder where the app.py file is.
+
 # Access environment variables directly:
 load_dotenv()
 PATH_TO_FULL_PIPELINE = os.getenv("PATH_TO_FULL_PIPELINE")
