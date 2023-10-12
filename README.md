@@ -49,7 +49,7 @@ Streamlit: es una biblioteca de código abierto de Python que se utiliza para cr
 ## Organización del Proyecto
 Estructura de carpetas:
 
-![Pdf alt](https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/data_science_1.jpeg)
+![Pdf alt](https://github.com/AI-School-F5-P2/Data_Scientist_1/blob/main/images/data_science_1.jpeg)
 
 ## Conclusiones
 Este proyecto tiene como objetivo desarrollar un prototipo de programa de inteligencia artificial para predecir el riesgo de ictus en pacientes. El cumplimiento de las condiciones de entrega, el uso de tecnologías adecuadas y un informe de clasificación detallado serán fundamentales para su éxito. 
