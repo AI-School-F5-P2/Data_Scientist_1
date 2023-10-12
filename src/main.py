@@ -3,6 +3,7 @@ from preprocessing import create_fit_preprocessor
 from model import sampling_classifier_model, pickle_files
 from testing import transform_predict_test_data
 from final_fit import metrics_final_training
+import app
 
 from dotenv import load_dotenv
 import os
@@ -51,3 +52,5 @@ if __name__ == '__main__':
     pickle_files(preprocessor, model)
 
     metrics_final_training(X, y)
+
+    app.run()
